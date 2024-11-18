@@ -9,9 +9,9 @@ library(lme4)
 library(AICcmodavg)
 
 # set data directory and load data
-setwd("/Volumes/MD_Portable/Models/Prop_1_Disease/Manuscripts/Ben_Caging_Paper/Eco_Applications_Submission/Ecosphere")
 DATA = read.csv("Intestine_Cs_Model_dataframe_11_15_2024.csv", header=T, stringsAsFactors=F)
 
+# update 
 DATA$Ex_Site = paste0("E",DATA$Exposure,"_",DATA$Site) # new grouping term for mixed effect models
 DATA$Mean_water_velocity_cms = DATA$Mean_water_velocity_ms*10 # convert velocity to centimeter per second from meter per second
 DATA$Max_Cs_spores_div5 = DATA$Max_Cs_spores_n_L/5 #rescale Cs conc
